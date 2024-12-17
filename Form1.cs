@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using System.Windows.Forms;
+using System.Configuration;
 
 
 namespace AxisLPRSystem
@@ -20,50 +21,45 @@ namespace AxisLPRSystem
         {
             InitializeComponent();
 
-           
-            _sdkManager = new Axis_SDKManager(8090);
-
             
+            string cameraIP = ConfigurationManager.AppSettings["Camera1_IP"];
+            string saveImagePath = ConfigurationManager.AppSettings["ImageSavePath"];
+            int port = 8090;
+
+            _sdkManager = new Axis_SDKManager(cameraIP, port, saveImagePath);
+
+           
             _sdkManager.LicensePlateDetected += OnLicensePlateDetected;
 
-            
             _sdkManager.StartListening();
         }
 
-
-        private void OnLicensePlateDetected(string plateData)
+        private void OnLprEventReceived(LprEventData eventData)
         {
-            try
+            Invoke(new Action(() =>
             {
-                
-                var json = JObject.Parse(plateData);
-                string plate = json["plate"]?.ToString() ?? "N/A";
-                string lane = json["lane"]?.ToString() ?? "N/A";
-                string time = DateTime.Now.ToString();
-
-                
-                Invoke(new Action(() =>
-                {
-                    listView1.Items.Add(new ListViewItem(new[]
-                    {
-                time,
-                lane,
-                plate
+                var listViewItem = new ListViewItem(eventData.EventDateTime.ToString());
+                listViewItem.SubItems.Add(eventData.Lane.ToString());
+                listViewItem.SubItems.Add(eventData.PlateNumber);
+                listView1.Items.Add(listViewItem);
             }));
-                }));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error parsing data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
-
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void OnLicensePlateDetected(LprEventData eventData)
         {
-            _sdkManager.StopListening();
+            Invoke(new Action(() =>
+            {
+                listView1.Items.Add(new ListViewItem(new[]
+                {
+            eventData.EventDateTime.ToString("yyyy-MM-dd HH:mm:ss"), // תאריך ושעה
+            eventData.Lane.ToString(),                              // Lane
+            eventData.PlateNumber                                   // מספר לוחית רישוי
+        }));
+            }));
         }
+
+
+
     }
 }
 
