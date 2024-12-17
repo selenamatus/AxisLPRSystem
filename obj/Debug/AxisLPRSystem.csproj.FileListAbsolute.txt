@@ -1,0 +1,15 @@
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\bin\Debug\AxisLPRSystem.exe.config
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\bin\Debug\AxisLPRSystem.exe
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\bin\Debug\AxisLPRSystem.pdb
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\bin\Debug\CommonLib.dll
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\bin\Debug\DynamTechMessaging.dll
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\bin\Debug\Newtonsoft.Json.dll
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\bin\Debug\Newtonsoft.Json.xml
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\obj\Debug\AxisLPRSystem.csproj.AssemblyReference.cache
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\obj\Debug\AxisLPRSystem.Form1.resources
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\obj\Debug\AxisLPRSystem.Properties.Resources.resources
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\obj\Debug\AxisLPRSystem.csproj.GenerateResource.cache
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\obj\Debug\AxisLPRSystem.csproj.CoreCompileInputs.cache
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\obj\Debug\AxisLPRS.C75B9F65.Up2Date
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\obj\Debug\AxisLPRSystem.exe
+C:\TFS_DYNAMTECH\AxisLPRSystem\AxisLPRSystem\obj\Debug\AxisLPRSystem.pdb
