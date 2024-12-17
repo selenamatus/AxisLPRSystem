@@ -51,9 +51,9 @@ namespace AxisLPRSystem
             {
                 listView1.Items.Add(new ListViewItem(new[]
                 {
-            eventData.EventDateTime.ToString("yyyy-MM-dd HH:mm:ss"), // תאריך ושעה
-            eventData.Lane.ToString(),                              // Lane
-            eventData.PlateNumber                                   // מספר לוחית רישוי
+            eventData.EventDateTime.ToString("yyyy-MM-dd HH:mm:ss"), 
+            eventData.Lane.ToString(),                              
+            eventData.PlateNumber                                  
         }));
             }));
         }
